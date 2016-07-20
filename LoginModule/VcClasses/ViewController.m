@@ -18,18 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self prepareView];
-
-    
-    
-// Orignal Login Button
-    
-    FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
-    // Optional: Place the button in the center of your view.
-    
-    [_viewFacebookSignUp addSubview:loginButton];
-    
-    loginButton.readPermissions =
-    @[@"public_profile", @"email", @"user_friends"];
     
 }
 
@@ -71,6 +59,28 @@
 //    _txtFEmail.layer.borderColor= [UIColor whiteColor].CGColor;
 //    _txtFEmail.layer.borderWidth=2;
 
+    
+}
+
+#pragma mark -FBLogin Button Click
+
+
+- (IBAction)btnFbloginAction:(UIButton *)sender {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login
+     logInWithReadPermissions: @[@"public_profile"]
+     fromViewController:self
+     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             NSLog(@"Logged in");
+         }
+     }];
+}
+- (IBAction)btnGoogleLoginAction:(UIButton *)sender {
     
 }
 

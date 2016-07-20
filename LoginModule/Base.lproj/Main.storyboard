@@ -87,12 +87,15 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cV-ka-rlz">
-                                <rect key="frame" x="227" y="396" width="62" height="62"/>
+                                <rect key="frame" x="227" y="396" width="64" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="62" id="0aW-ai-EWu"/>
-                                    <constraint firstAttribute="width" constant="62" id="fKd-Gp-5qH"/>
+                                    <constraint firstAttribute="height" constant="64" id="0aW-ai-EWu"/>
+                                    <constraint firstAttribute="width" constant="64" id="fKd-Gp-5qH"/>
                                 </constraints>
                                 <state key="normal" title="Google"/>
+                                <connections>
+                                    <action selector="btnGoogleLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jy2-D4-kRc"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-JQ-iyU">
                                 <rect key="frame" x="122" y="92" width="76" height="76"/>
@@ -121,10 +124,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZf-g4-dgQ">
-                                <rect key="frame" x="54" y="396" width="62" height="62"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLg-Tz-1NT">
+                                <rect key="frame" x="43" y="412" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="TNO-ZY-aal"/>
+                                    <constraint firstAttribute="height" constant="64" id="hWC-oM-2pi"/>
+                                </constraints>
+                                <state key="normal" image="imgFbLoginButton"/>
+                                <connections>
+                                    <action selector="btnFbloginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNJ-ug-QpN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -142,9 +152,9 @@
                             <constraint firstAttribute="trailing" secondItem="EYB-eN-VgU" secondAttribute="trailing" id="TuJ-xH-S17"/>
                             <constraint firstItem="ZUs-cO-PZl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UVu-7K-RAJ"/>
                             <constraint firstItem="IdK-sR-QqV" firstAttribute="top" secondItem="BpF-4z-qGi" secondAttribute="bottom" constant="18" id="Xv0-Rs-wIk"/>
-                            <constraint firstItem="PNV-Kw-4b9" firstAttribute="top" secondItem="9cV-ka-rlz" secondAttribute="bottom" constant="22" id="aSf-UC-OIs"/>
+                            <constraint firstItem="PNV-Kw-4b9" firstAttribute="top" secondItem="9cV-ka-rlz" secondAttribute="bottom" constant="20" id="aSf-UC-OIs"/>
                             <constraint firstItem="deV-ja-PGs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-4.5" id="b6q-Gc-0xV"/>
-                            <constraint firstItem="9cV-ka-rlz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="98" id="hKr-ci-5ay"/>
+                            <constraint firstItem="9cV-ka-rlz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="99" id="hKr-ci-5ay"/>
                             <constraint firstItem="7js-jm-Trs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hOY-Ts-4PU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EYB-eN-VgU" secondAttribute="bottom" id="hOe-va-a9A"/>
                             <constraint firstItem="b1V-3P-OSl" firstAttribute="top" secondItem="ZUs-cO-PZl" secondAttribute="bottom" constant="18" id="iIM-HZ-90d"/>
@@ -153,6 +163,8 @@
                             <constraint firstItem="PNV-Kw-4b9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nrM-uH-oYB"/>
                             <constraint firstAttribute="trailing" secondItem="WoX-hB-afC" secondAttribute="trailing" constant="9" id="nwf-SL-0kL"/>
                             <constraint firstItem="ZUs-cO-PZl" firstAttribute="top" secondItem="deV-ja-PGs" secondAttribute="bottom" constant="8" id="pzL-wS-hNQ"/>
+                            <constraint firstItem="kLg-Tz-1NT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="160" id="s8y-hU-uMO"/>
+                            <constraint firstItem="kLg-Tz-1NT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-85" id="t7e-b0-7KO"/>
                             <constraint firstItem="BpF-4z-qGi" firstAttribute="top" secondItem="qcJ-JQ-iyU" secondAttribute="bottom" constant="24" id="ujM-CC-4ko"/>
                             <constraint firstItem="EYB-eN-VgU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y7y-AF-cts"/>
                             <constraint firstItem="WoX-hB-afC" firstAttribute="top" secondItem="ZUs-cO-PZl" secondAttribute="bottom" constant="18" id="yzw-Hf-lJ4"/>
@@ -165,7 +177,6 @@
                         <outlet property="btnSignUp" destination="c2l-YP-1nF" id="kVT-Rd-l6w"/>
                         <outlet property="txtFEmail" destination="BpF-4z-qGi" id="hvE-LK-VXO"/>
                         <outlet property="txtFPassword" destination="IdK-sR-QqV" id="OZJ-cT-vQ2"/>
-                        <outlet property="viewFacebookSignUp" destination="FZf-g4-dgQ" id="rzM-kJ-q4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -192,6 +203,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="imgFbLoginButton" width="32" height="32"/>
         <image name="login background" width="376" height="604"/>
     </resources>
 </document>
