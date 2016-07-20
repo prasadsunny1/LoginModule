@@ -16,6 +16,7 @@
 		A96D64EC1D3E2A3800254E18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96D64EB1D3E2A3800254E18 /* ViewController.m */; };
 		A96D64EF1D3E2A5600254E18 /* login background.png in Resources */ = {isa = PBXBuildFile; fileRef = A96D64EE1D3E2A5600254E18 /* login background.png */; };
 		A9AFB88E1D3F69D200B49706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9AFB88D1D3F69D200B49706 /* GoogleService-Info.plist */; };
+		A9AFB8911D3F7E8600B49706 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AFB8901D3F7E8600B49706 /* SignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		A96D64EB1D3E2A3800254E18 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A96D64EE1D3E2A5600254E18 /* login background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login background.png"; sourceTree = "<group>"; };
 		A9AFB88D1D3F69D200B49706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A9AFB88F1D3F7E8600B49706 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		A9AFB8901D3F7E8600B49706 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 			children = (
 				A96D64EA1D3E2A3800254E18 /* ViewController.h */,
 				A96D64EB1D3E2A3800254E18 /* ViewController.m */,
+				A9AFB88F1D3F7E8600B49706 /* SignUpViewController.h */,
+				A9AFB8901D3F7E8600B49706 /* SignUpViewController.m */,
 			);
 			name = VcClasses;
 			path = LoginModule/VcClasses;
@@ -261,6 +266,7 @@
 			files = (
 				A96D64EC1D3E2A3800254E18 /* ViewController.m in Sources */,
 				A96BBC5B1D2FE9BF00BF70EC /* main.m in Sources */,
+				A9AFB8911D3F7E8600B49706 /* SignUpViewController.m in Sources */,
 				A96D64E41D3E29B700254E18 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

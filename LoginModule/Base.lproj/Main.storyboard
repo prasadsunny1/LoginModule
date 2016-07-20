@@ -85,16 +85,8 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cV-ka-rlz">
-                                <rect key="frame" x="227" y="396" width="64" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="0aW-ai-EWu"/>
-                                    <constraint firstAttribute="width" constant="64" id="fKd-Gp-5qH"/>
-                                </constraints>
-                                <state key="normal" title="Google"/>
                                 <connections>
-                                    <action selector="btnGoogleLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jy2-D4-kRc"/>
+                                    <segue destination="B1y-4f-8kB" kind="push" id="WyU-EO-5sZ"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-JQ-iyU">
@@ -125,7 +117,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLg-Tz-1NT">
-                                <rect key="frame" x="43" y="412" width="64" height="64"/>
+                                <rect key="frame" x="42" y="399" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="64" id="TNO-ZY-aal"/>
                                     <constraint firstAttribute="height" constant="64" id="hWC-oM-2pi"/>
@@ -133,6 +125,17 @@
                                 <state key="normal" image="imgFbLoginButton"/>
                                 <connections>
                                     <action selector="btnFbloginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qNJ-ug-QpN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cV-ka-rlz">
+                                <rect key="frame" x="203" y="399" width="64" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="0aW-ai-EWu"/>
+                                    <constraint firstAttribute="width" constant="64" id="fKd-Gp-5qH"/>
+                                </constraints>
+                                <state key="normal" image="imgGoogleLoginButton"/>
+                                <connections>
+                                    <action selector="btnGoogleLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jy2-D4-kRc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -148,13 +151,13 @@
                             <constraint firstItem="IdK-sR-QqV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Iin-5n-kjE"/>
                             <constraint firstItem="EYB-eN-VgU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JVw-II-ngS"/>
                             <constraint firstItem="c2l-YP-1nF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mvc-Sk-a29"/>
-                            <constraint firstItem="9cV-ka-rlz" firstAttribute="top" secondItem="WoX-hB-afC" secondAttribute="bottom" constant="30" id="Nlp-Az-1HG"/>
+                            <constraint firstItem="9cV-ka-rlz" firstAttribute="top" secondItem="WoX-hB-afC" secondAttribute="bottom" constant="33" id="Nlp-Az-1HG"/>
                             <constraint firstAttribute="trailing" secondItem="EYB-eN-VgU" secondAttribute="trailing" id="TuJ-xH-S17"/>
                             <constraint firstItem="ZUs-cO-PZl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UVu-7K-RAJ"/>
                             <constraint firstItem="IdK-sR-QqV" firstAttribute="top" secondItem="BpF-4z-qGi" secondAttribute="bottom" constant="18" id="Xv0-Rs-wIk"/>
-                            <constraint firstItem="PNV-Kw-4b9" firstAttribute="top" secondItem="9cV-ka-rlz" secondAttribute="bottom" constant="20" id="aSf-UC-OIs"/>
+                            <constraint firstItem="PNV-Kw-4b9" firstAttribute="top" secondItem="9cV-ka-rlz" secondAttribute="bottom" constant="17" id="aSf-UC-OIs"/>
                             <constraint firstItem="deV-ja-PGs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-4.5" id="b6q-Gc-0xV"/>
-                            <constraint firstItem="9cV-ka-rlz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="99" id="hKr-ci-5ay"/>
+                            <constraint firstItem="9cV-ka-rlz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="75" id="hKr-ci-5ay"/>
                             <constraint firstItem="7js-jm-Trs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hOY-Ts-4PU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EYB-eN-VgU" secondAttribute="bottom" id="hOe-va-a9A"/>
                             <constraint firstItem="b1V-3P-OSl" firstAttribute="top" secondItem="ZUs-cO-PZl" secondAttribute="bottom" constant="18" id="iIM-HZ-90d"/>
@@ -163,8 +166,8 @@
                             <constraint firstItem="PNV-Kw-4b9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nrM-uH-oYB"/>
                             <constraint firstAttribute="trailing" secondItem="WoX-hB-afC" secondAttribute="trailing" constant="9" id="nwf-SL-0kL"/>
                             <constraint firstItem="ZUs-cO-PZl" firstAttribute="top" secondItem="deV-ja-PGs" secondAttribute="bottom" constant="8" id="pzL-wS-hNQ"/>
-                            <constraint firstItem="kLg-Tz-1NT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="160" id="s8y-hU-uMO"/>
-                            <constraint firstItem="kLg-Tz-1NT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-85" id="t7e-b0-7KO"/>
+                            <constraint firstItem="kLg-Tz-1NT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="147" id="s8y-hU-uMO"/>
+                            <constraint firstItem="kLg-Tz-1NT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-86" id="t7e-b0-7KO"/>
                             <constraint firstItem="BpF-4z-qGi" firstAttribute="top" secondItem="qcJ-JQ-iyU" secondAttribute="bottom" constant="24" id="ujM-CC-4ko"/>
                             <constraint firstItem="EYB-eN-VgU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y7y-AF-cts"/>
                             <constraint firstItem="WoX-hB-afC" firstAttribute="top" secondItem="ZUs-cO-PZl" secondAttribute="bottom" constant="18" id="yzw-Hf-lJ4"/>
@@ -182,6 +185,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="278" y="401"/>
+        </scene>
+        <!--Sign Up-->
+        <scene sceneID="n5D-Z7-m6b">
+            <objects>
+                <viewController id="B1y-4f-8kB" customClass="SignUpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WbG-al-vx6"/>
+                        <viewControllerLayoutGuide type="bottom" id="LWB-11-t3Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z6B-SL-pmd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login background" translatesAutoresizingMaskIntoConstraints="NO" id="01Z-tG-aHJ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fV0-dc-K6L">
+                                <rect key="frame" x="26" y="156" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login background" translatesAutoresizingMaskIntoConstraints="NO" id="HhJ-uR-Xxz">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F6j-at-bZl">
+                                <rect key="frame" x="26" y="156" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jIQ-yP-fDW">
+                                <rect key="frame" x="26" y="206" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ConfirmPassWord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0iV-lX-Ig2">
+                                <rect key="frame" x="26" y="306" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K7D-Hv-pWg">
+                                <rect key="frame" x="26" y="256" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9a-la-l40">
+                                <rect key="frame" x="26" y="361" width="265" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.53041888297872342" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="btnRegisterAction:" destination="B1y-4f-8kB" eventType="touchUpInside" id="zYa-yA-6Nd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign Up" id="Ymb-Gv-6Wl"/>
+                    <connections>
+                        <outlet property="btnRegister" destination="F9a-la-l40" id="OUH-ut-tov"/>
+                        <outlet property="txtFConfirmPassword" destination="0iV-lX-Ig2" id="F5M-88-Y4X"/>
+                        <outlet property="txtFEmail" destination="jIQ-yP-fDW" id="27h-Ay-YGr"/>
+                        <outlet property="txtFName" destination="F6j-at-bZl" id="wek-5E-7l5"/>
+                        <outlet property="txtFPassword" destination="K7D-Hv-pWg" id="xl1-j5-OJg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxU-2i-zTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712" y="401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UV5-qb-uKA">
@@ -204,6 +274,7 @@
     </scenes>
     <resources>
         <image name="imgFbLoginButton" width="32" height="32"/>
+        <image name="imgGoogleLoginButton" width="181" height="181"/>
         <image name="login background" width="376" height="604"/>
     </resources>
 </document>
