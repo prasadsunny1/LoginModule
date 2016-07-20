@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface ViewController ()
 
@@ -24,8 +25,8 @@
     
     FBSDKLoginButton *loginButton = [[FBSDKLoginButton alloc] init];
     // Optional: Place the button in the center of your view.
-    loginButton.center = self.view.center;
-    [self.view addSubview:loginButton];
+    
+    [_viewFacebookSignUp addSubview:loginButton];
     
     loginButton.readPermissions =
     @[@"public_profile", @"email", @"user_friends"];

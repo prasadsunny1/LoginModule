@@ -16,9 +16,10 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtFPassword;
 @property (strong, nonatomic) IBOutlet UIButton *btnLogin;
 @property (strong, nonatomic) IBOutlet UIButton *btnSignUp;
-@property (strong, nonatomic) IBOutlet UIButton *btnFacebookSignUp;
+
 @property (strong, nonatomic) IBOutlet UIButton *btnGoogleSignUp;
 
+@property (weak, nonatomic) IBOutlet UIView *viewFacebookSignUp;
 
 @end
 
