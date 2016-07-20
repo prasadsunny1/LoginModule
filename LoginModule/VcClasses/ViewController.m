@@ -19,6 +19,13 @@
     [super viewDidLoad];
     [self prepareView];
     
+    //Google Sign-In Code
+    [GIDSignIn sharedInstance].uiDelegate = self;
+    
+    // Uncomment to automatically sign in the user.
+    //[[GIDSignIn sharedInstance] signInSilently];
+
+    
 }
 
 
@@ -81,7 +88,8 @@
      }];
 }
 - (IBAction)btnGoogleLoginAction:(UIButton *)sender {
-    
+    [[GIDSignIn sharedInstance] signIn];
+
 }
 
 @end

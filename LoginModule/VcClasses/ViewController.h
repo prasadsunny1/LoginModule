@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <Google/SignIn.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <GIDSignInUIDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *txtFEmail;
 @property (strong, nonatomic) IBOutlet UITextField *txtFPassword;
