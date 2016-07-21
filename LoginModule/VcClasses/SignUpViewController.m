@@ -37,5 +37,49 @@
 #pragma mark -Register Button Action
 
 - (IBAction)btnRegisterAction:(UIButton *)sender {
+    
+    
+    if([_txtFPassword.text isEqualToString:_txtFConfirmPassword.text] ){
+        [self addUser];
+    }
+    
+    
+    
 }
+
+
+
+-(void)addUser{
+    
+    NSDictionary *headers = @{ @"x-apikey": @"18961ebc916a47e54dae5dcb273d407508bbe",
+                               @"content-type": @"application/json",
+                               @"cache-control": @"no-cache",
+                               @"postman-token": @"57c41260-46db-41ca-9399-cbccae2e2e59" };
+    NSDictionary *parameters = @{ @"name": _txtFName.text,
+                                  @"email": _txtFEmail.text,
+                                  @"password":_txtFPassword.text};
+    
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://recipeapp-6bbd.restdb.io/rest/profile"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:headers];
+    [request setHTTPBody:postData];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
+
 @end

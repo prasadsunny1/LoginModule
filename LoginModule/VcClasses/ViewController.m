@@ -92,4 +92,52 @@
 
 }
 
+
+#pragma mark -login Authentication
+
+
+
+-(void)validateUser{
+    
+    NSDictionary *headers = @{ @"content-type": @"application/json",
+                               @"x-apikey": @"18961ebc916a47e54dae5dcb273d407508bbe",
+                               @"cache-control": @"no-cache",
+                               @"postman-token": @"75f6a352-914f-954f-19f7-b29dddaeade9" };
+    
+   NSString *email =@"email";
+    NSString *url =[NSString stringWithFormat:@"https://recipeapp-6bbd.restdb.io/rest/profile?q={%@:%@}",email,_txtFEmail.text];
+    NSURL *myurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myurl
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        
+                                                        if(data){
+                                                            NSLog(@"Successfully Logged in");
+                                                        }
+                                                        
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
+- (IBAction)btnLoginAction:(UIButton *)sender {
+    
+    [self validateUser];
+    
+}
+
+
+
+
 @end
