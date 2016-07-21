@@ -18,6 +18,12 @@
 		A9AE262B1D40B41F0053CB96 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AE262A1D40B41F0053CB96 /* Default-568h@2x.png */; };
 		A9AFB88E1D3F69D200B49706 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9AFB88D1D3F69D200B49706 /* GoogleService-Info.plist */; };
 		A9AFB8911D3F7E8600B49706 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AFB8901D3F7E8600B49706 /* SignUpViewController.m */; };
+		A9F8D2B81D41110600C0074E /* Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F8D2B11D41110600C0074E /* Facebook.png */; };
+		A9F8D2B91D41110600C0074E /* Facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F8D2B21D41110600C0074E /* Facebook@2x.png */; };
+		A9F8D2BA1D41110600C0074E /* Facebook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F8D2B31D41110600C0074E /* Facebook@3x.png */; };
+		A9F8D2BB1D41110600C0074E /* Google+.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F8D2B51D41110600C0074E /* Google+.png */; };
+		A9F8D2BC1D41110600C0074E /* Google+@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F8D2B61D41110600C0074E /* Google+@2x.png */; };
+		A9F8D2BD1D41110600C0074E /* Google+@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F8D2B71D41110600C0074E /* Google+@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,12 @@
 		A9AFB88D1D3F69D200B49706 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A9AFB88F1D3F7E8600B49706 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		A9AFB8901D3F7E8600B49706 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		A9F8D2B11D41110600C0074E /* Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Facebook.png; sourceTree = "<group>"; };
+		A9F8D2B21D41110600C0074E /* Facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook@2x.png"; sourceTree = "<group>"; };
+		A9F8D2B31D41110600C0074E /* Facebook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Facebook@3x.png"; sourceTree = "<group>"; };
+		A9F8D2B51D41110600C0074E /* Google+.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Google+.png"; sourceTree = "<group>"; };
+		A9F8D2B61D41110600C0074E /* Google+@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Google+@2x.png"; sourceTree = "<group>"; };
+		A9F8D2B71D41110600C0074E /* Google+@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Google+@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,10 +150,40 @@
 		A96D64ED1D3E2A5600254E18 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				A9F8D2AF1D41110600C0074E /* icons */,
 				A96D64EE1D3E2A5600254E18 /* login background.png */,
 			);
 			name = Resource;
 			path = LoginModule/Resource;
+			sourceTree = "<group>";
+		};
+		A9F8D2AF1D41110600C0074E /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				A9F8D2B01D41110600C0074E /* fb */,
+				A9F8D2B41D41110600C0074E /* google */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		A9F8D2B01D41110600C0074E /* fb */ = {
+			isa = PBXGroup;
+			children = (
+				A9F8D2B11D41110600C0074E /* Facebook.png */,
+				A9F8D2B21D41110600C0074E /* Facebook@2x.png */,
+				A9F8D2B31D41110600C0074E /* Facebook@3x.png */,
+			);
+			path = fb;
+			sourceTree = "<group>";
+		};
+		A9F8D2B41D41110600C0074E /* google */ = {
+			isa = PBXGroup;
+			children = (
+				A9F8D2B51D41110600C0074E /* Google+.png */,
+				A9F8D2B61D41110600C0074E /* Google+@2x.png */,
+				A9F8D2B71D41110600C0074E /* Google+@3x.png */,
+			);
+			path = google;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,8 +247,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96D64EF1D3E2A5600254E18 /* login background.png in Resources */,
+				A9F8D2B91D41110600C0074E /* Facebook@2x.png in Resources */,
+				A9F8D2B81D41110600C0074E /* Facebook.png in Resources */,
 				A96BBC691D2FE9BF00BF70EC /* LaunchScreen.storyboard in Resources */,
+				A9F8D2BA1D41110600C0074E /* Facebook@3x.png in Resources */,
+				A9F8D2BB1D41110600C0074E /* Google+.png in Resources */,
+				A9F8D2BC1D41110600C0074E /* Google+@2x.png in Resources */,
 				A9AFB88E1D3F69D200B49706 /* GoogleService-Info.plist in Resources */,
+				A9F8D2BD1D41110600C0074E /* Google+@3x.png in Resources */,
 				A96BBC661D2FE9BF00BF70EC /* Assets.xcassets in Resources */,
 				A96BBC641D2FE9BF00BF70EC /* Main.storyboard in Resources */,
 				A9AE262B1D40B41F0053CB96 /* Default-568h@2x.png in Resources */,

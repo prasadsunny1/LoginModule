@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "Facebook.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "G_is_For_Google_New_Logo_Thumb.png",
       "scale" : "2x"
     },
     {

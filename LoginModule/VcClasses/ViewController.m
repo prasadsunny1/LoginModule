@@ -52,10 +52,12 @@
     _txtFEmail.layer.masksToBounds = YES;
     
     
-    
-    border.frame = CGRectMake(0, _txtFPassword.frame.size.height - borderWidth, _txtFPassword.frame.size.width, _txtFPassword.frame.size.height);
-    border.borderWidth = borderWidth;
-    [_txtFPassword.layer addSublayer:border];
+    CALayer *passwordborder =[CALayer layer];
+    _txtFPassword.borderStyle = UITextBorderStyleNone;
+    passwordborder.borderColor = [UIColor whiteColor].CGColor;
+    passwordborder.frame = CGRectMake(0, _txtFPassword.frame.size.height - borderWidth, _txtFPassword.frame.size.width, _txtFPassword.frame.size.height);
+    passwordborder.borderWidth = borderWidth;
+    [_txtFPassword.layer addSublayer:passwordborder];
     _txtFPassword.layer.masksToBounds = YES;
     
     
@@ -104,8 +106,9 @@
                                @"cache-control": @"no-cache",
                                @"postman-token": @"75f6a352-914f-954f-19f7-b29dddaeade9" };
     
-   NSString *email =@"email";
-    NSString *url =[NSString stringWithFormat:@"https://recipeapp-6bbd.restdb.io/rest/profile?q={%@:%@}",email,_txtFEmail.text];
+   NSString *email=@"email";
+    NSString *password=@"password";
+    NSString *url =[NSString stringWithFormat:@"https://recipeapp-6bbd.restdb.io/rest/profile?q={%@:%@,%@:%@}",email,_txtFEmail.text,password,_txtFPassword];
     NSURL *myurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myurl
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy

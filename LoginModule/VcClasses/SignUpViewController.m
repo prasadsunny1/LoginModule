@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +33,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+#pragma mark -UIDesign
+
+
+
+
 
 #pragma mark -Register Button Action
 
