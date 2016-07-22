@@ -34,4 +34,16 @@
 }
 */
 
+#pragma mark -Button Actions-
+
+- (IBAction)btnSelectVideoAction:(UIButton *)sender {
+    
+}
+
+
+- (IBAction)barBtnDoneAction:(UIBarButtonItem *)sender {
+    
+}
+
+
 @end

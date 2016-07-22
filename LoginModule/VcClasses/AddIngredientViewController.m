@@ -34,4 +34,14 @@
 }
 */
 
+
+
+#pragma mark -Button Action
+
+- (IBAction)btnAddAction:(UIButton *)sender {
+}
+
+- (IBAction)btnDoneAction:(UIBarButtonItem *)sender {
+}
+
 @end

@@ -10,4 +10,6 @@
 
 @interface PreviewStepsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *tablePreview;
+
 @end

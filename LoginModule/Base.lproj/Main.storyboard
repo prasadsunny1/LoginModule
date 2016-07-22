@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="401"/>
+            <point key="canvasLocation" x="-4" y="395"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="n5D-Z7-m6b">
@@ -350,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxU-2i-zTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="94"/>
+            <point key="canvasLocation" x="368" y="395"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UV5-qb-uKA">
@@ -368,7 +368,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFa-ab-zDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-143" y="401"/>
+            <point key="canvasLocation" x="-397" y="395"/>
         </scene>
         <!--Upload Your Recipe-->
         <scene sceneID="Eqg-jM-T1S">
@@ -382,15 +382,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xx-nv-Weh">
-                                <rect key="frame" x="0.0" y="64" width="320" height="138"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="CeY-hV-DvC"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9xx-nv-Weh">
+                                <rect key="frame" x="0.0" y="64" width="320" height="136"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4o-ZZ-5Tj">
                                 <rect key="frame" x="188" y="170" width="126" height="30"/>
-                                <state key="normal" title="Add Cover Photo"/>
+                                <state key="normal" title="Add Cover Image"/>
+                                <connections>
+                                    <action selector="btnAddCoverImage:" destination="hKn-7f-R1a" eventType="touchUpInside" id="JGP-0z-anJ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nmae Of Recipe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VVw-Gy-nIH">
                                 <rect key="frame" x="8" y="208" width="181" height="30"/>
@@ -411,7 +411,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="khs-AJ-FGp">
-                                <rect key="frame" x="27" y="358" width="112" height="31"/>
+                                <rect key="frame" x="27" y="358" width="90" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHM-gF-Evp">
                                 <rect key="frame" x="13" y="362" width="8" height="21"/>
@@ -420,86 +420,118 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="serves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tO5-EA-zGh">
-                                <rect key="frame" x="61" y="334" width="51" height="21"/>
+                                <rect key="frame" x="20" y="334" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEf-EC-FpK">
-                                <rect key="frame" x="145" y="362" width="12" height="21"/>
+                                <rect key="frame" x="123" y="362" width="12" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lXc-uq-eSp">
-                                <rect key="frame" x="165" y="345" width="4" height="55"/>
+                                <rect key="frame" x="143" y="345" width="4" height="55"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tqd-vw-4e1">
-                                <rect key="frame" x="190" y="358" width="104" height="31"/>
+                                <rect key="frame" x="176" y="358" width="104" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2K-q4-frl">
-                                <rect key="frame" x="178" y="362" width="11" height="21"/>
+                                <rect key="frame" x="164" y="362" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time(minute)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPn-Oz-xB4">
-                                <rect key="frame" x="199" y="334" width="102" height="21"/>
+                                <rect key="frame" x="169" y="334" width="102" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a16-sI-xb1">
-                                <rect key="frame" x="293" y="362" width="21" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a16-sI-xb1">
+                                <rect key="frame" x="286" y="362" width="28" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1T-VB-fRg">
-                                <rect key="frame" x="0.0" y="507" width="320" height="33"/>
+                                <rect key="frame" x="1" y="490" width="320" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add Steps">
                                     <color key="titleShadowColor" red="0.20836189390000001" green="0.12648978829999999" blue="0.68714416030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="btnAddStepsAction:" destination="hKn-7f-R1a" eventType="touchUpInside" id="1Uq-AQ-QYs"/>
                                     <segue destination="Rqn-Yw-6kV" kind="push" id="dBS-TL-LK8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9R-mh-aVf">
-                                <rect key="frame" x="0.0" y="419" width="320" height="33"/>
+                                <rect key="frame" x="1" y="408" width="320" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add ingredients">
                                     <color key="titleShadowColor" red="0.20836189390000001" green="0.12648978829999999" blue="0.68714416030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="btnAddIngredientsAction:" destination="hKn-7f-R1a" eventType="touchUpInside" id="Dvu-gg-81D"/>
                                     <segue destination="n5z-um-1iu" kind="push" id="tLL-TF-2BK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZJ-Cy-op5">
-                                <rect key="frame" x="108" y="466" width="104" height="33"/>
+                                <rect key="frame" x="109" y="449" width="104" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Add Video">
                                     <color key="titleShadowColor" red="0.20836189390000001" green="0.12648978829999999" blue="0.68714416030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="btnAddVideoAction:" destination="hKn-7f-R1a" eventType="touchUpInside" id="cwD-7w-n9U"/>
                                     <segue destination="ifP-Y8-i77" kind="push" id="A8c-FN-gzC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="no" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjq-BC-g3R">
+                                <rect key="frame" x="88" y="334" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lz-Ri-usb">
+                                <rect key="frame" x="279" y="334" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxE-XQ-4GB">
+                                <rect key="frame" x="13" y="531" width="295" height="30"/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="btnUploadAction:" destination="hKn-7f-R1a" eventType="touchUpInside" id="4aK-f2-rtW"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9xx-nv-Weh" firstAttribute="leading" secondItem="Ver-4o-U0K" secondAttribute="leading" id="3oD-eu-f3j"/>
-                            <constraint firstItem="9xx-nv-Weh" firstAttribute="top" secondItem="Y7Q-GO-lTp" secondAttribute="bottom" id="AMb-RO-eJy"/>
-                            <constraint firstAttribute="trailing" secondItem="9xx-nv-Weh" secondAttribute="trailing" id="gjN-fh-rXE"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Upload Your Recipe" id="w7k-L9-qKd"/>
+                    <connections>
+                        <outlet property="btnAddCoverImage" destination="h4o-ZZ-5Tj" id="Tn7-rS-xbv"/>
+                        <outlet property="btnAddIngredient" destination="i9R-mh-aVf" id="mLP-7F-Uu2"/>
+                        <outlet property="btnAddStep" destination="r1T-VB-fRg" id="mZg-JV-i8A"/>
+                        <outlet property="btnAddVideo" destination="nZJ-Cy-op5" id="eXt-Dg-obT"/>
+                        <outlet property="btnUpload" destination="FxE-XQ-4GB" id="V2G-EY-gyn"/>
+                        <outlet property="imgCoverImage" destination="9xx-nv-Weh" id="Zd3-6X-Tco"/>
+                        <outlet property="lblServes" destination="bjq-BC-g3R" id="2x6-ea-Dm3"/>
+                        <outlet property="lblTime" destination="0Lz-Ri-usb" id="dBY-SB-Lcq"/>
+                        <outlet property="segmentVegNonVeg" destination="Xga-Ib-pa6" id="xXF-cn-fNO"/>
+                        <outlet property="sliderServes" destination="khs-AJ-FGp" id="oWD-1J-Swg"/>
+                        <outlet property="sliderTime" destination="tqd-vw-4e1" id="FsI-c0-SjK"/>
+                        <outlet property="txtFRecipeName" destination="VVw-Gy-nIH" id="MaM-5K-F3q"/>
+                        <outlet property="txtRecipeDiscription" destination="tZq-SU-bym" id="08b-MH-eRC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvj-Ld-QlP" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="757"/>
+            <point key="canvasLocation" x="-4" y="1103"/>
         </scene>
         <!--Add Steps-->
         <scene sceneID="y8U-0F-2wu">
@@ -513,10 +545,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rv-xW-ZBe">
-                                <rect key="frame" x="137" y="143" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Add Discription" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="w5T-PU-KoF">
                                 <rect key="frame" x="15" y="278" width="285" height="163"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -526,15 +554,31 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-3w-88Z">
                                 <rect key="frame" x="20" y="464" width="280" height="30"/>
                                 <state key="normal" title="Add Step"/>
+                                <connections>
+                                    <action selector="btnAddStepAction:" destination="Rqn-Yw-6kV" eventType="touchUpInside" id="e4n-Im-koM"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No of steps Added: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FP2-Hr-Jbe">
-                                <rect key="frame" x="15" y="527" width="168" height="21"/>
+                                <rect key="frame" x="15" y="527" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rv-xW-ZBe">
+                                <rect key="frame" x="137" y="143" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btnSelectImageAction:" destination="Rqn-Yw-6kV" eventType="touchUpInside" id="aXl-ya-wt6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="no" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIH-7N-9U6">
+                                <rect key="frame" x="169" y="527" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eW2-AL-wPi">
-                                <rect key="frame" x="3" y="72" width="308" height="181"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="180"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -542,14 +586,22 @@
                     <navigationItem key="navigationItem" title="Add Steps" id="FHj-Jg-Vw0">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="QYV-q3-DyO">
                             <connections>
+                                <action selector="barBtnDoneAction:" destination="Rqn-Yw-6kV" id="XFk-x3-KtW"/>
                                 <segue destination="q00-AE-3gk" kind="push" id="P08-JX-K8O"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnAddImage" destination="0rv-xW-ZBe" id="Grs-l1-Gex"/>
+                        <outlet property="btnAddStep" destination="Is1-3w-88Z" id="tbD-H8-FEB"/>
+                        <outlet property="imgStepImage" destination="eW2-AL-wPi" id="wpY-ml-Osp"/>
+                        <outlet property="lblNumberOfSteps" destination="eIH-7N-9U6" id="yt4-30-9c3"/>
+                        <outlet property="txtStepDescription" destination="w5T-PU-KoF" id="k5x-d3-XRt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTR-6g-B0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="1248"/>
+            <point key="canvasLocation" x="-27" y="1822"/>
         </scene>
         <!--Preview-->
         <scene sceneID="cBO-9o-F25">
@@ -598,12 +650,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Preview" id="gAK-8X-Ot2">
-                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="BqI-hB-Qxe"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="BqI-hB-Qxe">
+                            <connections>
+                                <action selector="barBtnDoneAction:" destination="q00-AE-3gk" id="fuS-Q2-BaN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tablePreview" destination="Ru2-zq-iI8" id="oMA-tu-fEk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJz-nS-BzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="1134"/>
+            <point key="canvasLocation" x="-27" y="2536"/>
         </scene>
         <!--Add Ingredients-->
         <scene sceneID="hgT-nG-UUO">
@@ -622,10 +681,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umH-se-rZm">
-                                <rect key="frame" x="270" y="77" width="30" height="30"/>
-                                <state key="normal" title="add"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IQc-Mi-ZCV">
                                 <rect key="frame" x="127" y="77" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -659,17 +714,34 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umH-se-rZm">
+                                <rect key="frame" x="270" y="77" width="30" height="30"/>
+                                <state key="normal" title="add"/>
+                                <connections>
+                                    <action selector="btnAddAction:" destination="n5z-um-1iu" eventType="touchUpInside" id="qyP-A5-Sxh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Ingredients" id="Upo-fR-0pb">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="aLX-fK-mfM"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="aLX-fK-mfM">
+                            <connections>
+                                <action selector="btnDoneAction:" destination="n5z-um-1iu" id="SiI-FP-itA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnAdd" destination="umH-se-rZm" id="SRI-v4-qVT"/>
+                        <outlet property="tableIngredient" destination="KwL-h8-2f1" id="HAR-Js-8jM"/>
+                        <outlet property="txtFIngredientName" destination="quw-Ky-Hcm" id="NXs-ik-PPu"/>
+                        <outlet property="txtFQuantity" destination="IQc-Mi-ZCV" id="BiI-l4-KS7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcI-Fy-Jiw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="248"/>
+            <point key="canvasLocation" x="410" y="1108"/>
         </scene>
         <!--Add Video-->
         <scene sceneID="4N1-1F-K3c">
@@ -689,17 +761,28 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUg-3l-Z4k">
                                 <rect key="frame" x="11" y="258" width="298" height="39"/>
                                 <state key="normal" title="Select Video "/>
+                                <connections>
+                                    <action selector="btnSelectVideoAction:" destination="ifP-Y8-i77" eventType="touchUpInside" id="3OO-lu-RUi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Video" id="18m-f3-p1B">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="ist-kn-UdH"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="ist-kn-UdH">
+                            <connections>
+                                <action selector="barBtnDoneAction:" destination="ifP-Y8-i77" id="iGS-Yp-YiD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnSelectVideo" destination="GUg-3l-Z4k" id="Y9u-E1-7e5"/>
+                        <outlet property="imgAddVideoImage" destination="6dE-eN-Me7" id="bRr-Pz-0Ns"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C58-Wt-GMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915" y="796"/>
+            <point key="canvasLocation" x="353" y="1808"/>
         </scene>
     </scenes>
     <resources>

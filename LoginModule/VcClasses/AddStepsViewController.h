@@ -9,5 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface AddStepsViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *imgStepImage;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnAddImage;
+
+@property (weak, nonatomic) IBOutlet UITextView *txtStepDescription;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnAddStep;
+
+@property (weak, nonatomic) IBOutlet UILabel *lblNumberOfSteps;
+
+
+
+
+
 
 @end

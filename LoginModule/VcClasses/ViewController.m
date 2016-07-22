@@ -10,6 +10,9 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface ViewController ()
+{
+    NSMutableDictionary *loginData;
+}
 
 @end
 
@@ -18,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self prepareView];
+    
+    loginData =[NSMutableDictionary new];
     
     //Google Sign-In Code
     [GIDSignIn sharedInstance].uiDelegate = self;
@@ -106,10 +111,10 @@
 -(void)validateUser{
     
     NSDictionary *headers = @{ @"content-type": @"application/json",
-                               @"x-apikey": @"18961ebc916a47e54dae5dcb273d407508bbe",
-                               @"cache-control": @"no-cache",
-                               @"postman-token": @"75f6a352-914f-954f-19f7-b29dddaeade9" };
-    
+                               @"x-apikey": @"18961ebc916a47e54dae5dcb273d407508bbe",@"cache-control": @"no-cache",
+    @"postman-token": @"75f6a352-914f-954f-19f7-b29dddaeade9" };
+
+
     NSString *email=@"email";
     NSString *password=@"password";
     NSString *url =[NSString stringWithFormat:@"https://recipeapp-6bbd.restdb.io/rest/profile?q={%@:%@,%@:%@}",email,_txtFEmail.text,password,_txtFPassword];
@@ -126,7 +131,11 @@
                                                     if (error) {
                                                         NSLog(@"%@", error);
                                                     } else {
+                                                        NSLog(@"%@",data);
+                                                        NSDictionary *aDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                                                        NSLog(@" Dict : %@",aDict);
                                                         
+//
                                                         if(data){
                                                             NSLog(@"Successfully Logged in");
                                                             
@@ -136,8 +145,8 @@
                                                             });
                                                         }
                                                         
-//                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-//                                                        NSLog(@"%@", httpResponse);
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
                                                     }
                                                 }];
     [dataTask resume];

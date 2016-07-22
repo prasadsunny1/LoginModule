@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol protocolIngrident <NSObject>
+
+-(void)sendData;
+
+@end
+
 @interface AddIngredientViewController : UIViewController
+
+
+@property (strong,nonatomic)  id  <protocolIngrident> delegate;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtFIngredientName;
+
+@property (weak, nonatomic) IBOutlet UITextField *txtFQuantity;
+@property (weak, nonatomic) IBOutlet UIButton *btnAdd;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableIngredient;
 
 @end

@@ -10,4 +10,12 @@
 
 @interface AddVideoViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgAddVideoImage;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnSelectVideo;
+
+
+
+
+
 @end

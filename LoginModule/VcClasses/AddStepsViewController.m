@@ -34,4 +34,18 @@
 }
 */
 
+#pragma mark -Button Actions-
+
+- (IBAction)btnSelectImageAction:(UIButton *)sender {
+    
+}
+
+
+- (IBAction)btnAddStepAction:(UIButton *)sender {
+    
+}
+
+- (IBAction)barBtnDoneAction:(id)sender {
+}
+
 @end

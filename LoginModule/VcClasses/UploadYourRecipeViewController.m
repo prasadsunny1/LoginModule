@@ -7,7 +7,7 @@
 //
 
 #import "UploadYourRecipeViewController.h"
-
+#import "AddIngredientViewController.h"
 @interface UploadYourRecipeViewController ()
 
 @end
@@ -16,6 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //object of other class
+    AddIngredientViewController *objaddIngredient =[[AddIngredientViewController alloc]init];
+    
+    
+    
+    objaddIngredient.delegate=self;
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -33,5 +43,37 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma mark -Button Actions
+
+
+
+- (IBAction)btnAddCoverImage:(UIButton *)sender {
+}
+
+
+- (IBAction)btnAddIngredientsAction:(UIButton *)sender {
+}
+
+- (IBAction)btnAddVideoAction:(UIButton *)sender {
+}
+
+- (IBAction)btnAddStepsAction:(UIButton *)sender {
+}
+
+
+- (IBAction)btnUploadAction:(UIButton *)sender {
+}
+
+
+#pragma mark -Delegate Methods
+
+
+-(void)sendData{
+    
+    NSLog(@"delegate called");
+    
+}
 
 @end
