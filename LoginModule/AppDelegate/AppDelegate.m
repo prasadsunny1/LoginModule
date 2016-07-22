@@ -26,8 +26,6 @@
                              didFinishLaunchingWithOptions:launchOptions];
     
     
-    
-    
     // Google Sign in Code
     NSError* configureError;
     [[GGLContext sharedInstance] configureWithError: &configureError];

@@ -22,6 +22,10 @@
     //Google Sign-In Code
     [GIDSignIn sharedInstance].uiDelegate = self;
     
+    
+    _txtFEmail.text = @"prasadsunny1@gmail.com";
+    _txtFPassword.text = @"qwerty123";
+    
     // Uncomment to automatically sign in the user.
     //[[GIDSignIn sharedInstance] signInSilently];
 
@@ -106,7 +110,7 @@
                                @"cache-control": @"no-cache",
                                @"postman-token": @"75f6a352-914f-954f-19f7-b29dddaeade9" };
     
-   NSString *email=@"email";
+    NSString *email=@"email";
     NSString *password=@"password";
     NSString *url =[NSString stringWithFormat:@"https://recipeapp-6bbd.restdb.io/rest/profile?q={%@:%@,%@:%@}",email,_txtFEmail.text,password,_txtFPassword];
     NSURL *myurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -125,10 +129,15 @@
                                                         
                                                         if(data){
                                                             NSLog(@"Successfully Logged in");
+                                                            
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                                [self performSegueWithIdentifier:@"LoginSuccessSegue" sender:nil];
+
+                                                            });
                                                         }
                                                         
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
+//                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+//                                                        NSLog(@"%@", httpResponse);
                                                     }
                                                 }];
     [dataTask resume];
