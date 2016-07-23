@@ -8,6 +8,7 @@
 
 #import "UploadYourRecipeViewController.h"
 #import "AddIngredientViewController.h"
+#import "AddStepsViewController.h"
 
 @interface UploadYourRecipeViewController ()
 {
@@ -22,8 +23,8 @@
     [super viewDidLoad];
     dictRecipe=[[NSMutableDictionary alloc]init];
     //object of other class
-    AddIngredientViewController *objaddIngredient =[[AddIngredientViewController alloc]init];
-    objaddIngredient.delegate=self;
+//    AddIngredientViewController *objaddIngredient =[[AddIngredientViewController alloc]init];
+//    objaddIngredient.delegate=self;
     
     
     
@@ -51,6 +52,15 @@
             
             NSLog(@"%@",mutArr);
         }];
+    }
+    if ([segue.identifier isEqualToString:@"AddStepsViewControllerSegue"]) {
+        
+        AddStepsViewController *obj = segue.destinationViewController;
+        [obj set_completionHandler:^(NSMutableArray *mutArr) {
+            
+            NSLog(@"%@",mutArr);
+        }];
+
     }
 }
 

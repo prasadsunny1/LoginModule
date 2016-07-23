@@ -9,16 +9,16 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol protocolIngrident <NSObject>
-
--(void)sendData;
-
-@end
+//@protocol protocolIngrident <NSObject>
+//
+//-(void)sendData;
+//
+//@end
 
 @interface AddIngredientViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong) void (^_completionHandler)(NSMutableArray *someParameter);
-@property (strong,nonatomic)  id  <protocolIngrident> delegate;
+//@property (strong,nonatomic)  id  <protocolIngrident> delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFIngredientName;
 

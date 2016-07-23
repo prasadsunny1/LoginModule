@@ -465,7 +465,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnAddStepsAction:" destination="hKn-7f-R1a" eventType="touchUpInside" id="1Uq-AQ-QYs"/>
-                                    <segue destination="Rqn-Yw-6kV" kind="push" id="dBS-TL-LK8"/>
+                                    <segue destination="Rqn-Yw-6kV" kind="push" identifier="AddStepsViewControllerSegue" id="dBS-TL-LK8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9R-mh-aVf">

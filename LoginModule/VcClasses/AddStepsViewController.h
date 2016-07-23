@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddStepsViewController : UIViewController
+@interface AddStepsViewController : UIViewController <UIImagePickerControllerDelegate>
+
+@property(nonatomic,strong) void (^_completionHandler)(NSMutableArray *someParameter);
+
 @property (weak, nonatomic) IBOutlet UIImageView *imgStepImage;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnAddImage;
