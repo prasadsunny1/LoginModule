@@ -115,13 +115,21 @@
     @"postman-token": @"75f6a352-914f-954f-19f7-b29dddaeade9" };
 
 
-    NSString *email=@"email";
-    NSString *password=@"password";
-    NSString *url =[NSString stringWithFormat:@"https://recipeapp-6bbd.restdb.io/rest/profile?q={%@:%@,%@:%@}",email,_txtFEmail.text,password,_txtFPassword];
+//    NSString *email=@"email";
+//    NSString *password=@"password";
+    NSString *url =[NSString stringWithFormat:@"https://recipeapp-6bbd.restdb.io/rest/profile?q={\"email\":\"%@\",\"password\":\"%@\"}",_txtFEmail.text,_txtFPassword.text];
+    
+    NSLog(@"\n\n URL :    %@",url);
+    NSLog(@"utf %@",[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
+    
     NSURL *myurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myurl
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:10.0];
+    
+    
+
+    NSLog(@"\n\n MYURL :   %@",myurl);
     [request setHTTPMethod:@"GET"];
     [request setAllHTTPHeaderFields:headers];
     
@@ -132,21 +140,31 @@
                                                         NSLog(@"%@", error);
                                                     } else {
                                                         NSLog(@"%@",data);
-                                                        NSDictionary *aDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-                                                        NSLog(@" Dict : %@",aDict);
+                                                        NSArray *aArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                                                        NSLog(@" Dict : %@",aArray);
                                                         
-//
-                                                        if(data){
-                                                            NSLog(@"Successfully Logged in");
+                                                        if(aArray.count){
+                                                        
+                                                        NSDictionary *aDict = aArray[0];
+                                                        
+                                                        NSLog(@"Successfully Logged in");
+                                                        
+                                                        dispatch_async(dispatch_get_main_queue(), ^{
                                                             
-                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                            if([aDict[@"email"] isEqualToString:_txtFEmail.text ] && [aDict[@"password"] isEqualToString:_txtFPassword.text ]){
+                                                                
                                                                 [self performSegueWithIdentifier:@"LoginSuccessSegue" sender:nil];
-
-                                                            });
+                                                                
+                                                            }
+                                                            
+                                                        });
+                                                            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                            NSLog(@"%@", httpResponse);
+                                                        }else{
+                                                            
+                                                            NSLog(@" Wrong Username or Password");
                                                         }
-                                                        
-                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-                                                        NSLog(@"%@", httpResponse);
+                                                      
                                                     }
                                                 }];
     [dataTask resume];
