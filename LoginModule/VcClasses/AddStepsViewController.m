@@ -96,27 +96,30 @@
     [arrMutSteps addObject:dictMutStep];
     dictMutStep =[NSMutableDictionary new];
     intstepNumber++;
+        
+    _txtStepDescription.text=@"";
+    _imgStepImage.image=nil;
+    _lblNumberOfSteps.text=[NSString stringWithFormat:@"%d",intstepNumber];
+        NSLog(@"arr print %@",arrMutSteps);
     }
     else{
         NSLog(@"Please enter Something");
     }
 }
 
-- (IBAction)barBtnDoneAction:(id)sender {
+- (IBAction)barBtnDoneAction:(UIBarButtonItem*)sender {
     if (self._completionHandler)
     {
         
         self._completionHandler(arrMutSteps);
-        _txtStepDescription.text=@"";
-        _imgStepImage.image=nil;
-        _lblNumberOfSteps.text=[NSString stringWithFormat:@"%d",intstepNumber];
+        
     }
 }
 
 #pragma mark -Other Methods-
 
 -(BOOL)validateInputs{
-    if (_imgStepImage.image==nil || _txtStepDescription==nil|| [_txtStepDescription isEqual:@""] ) {
+    if (_imgStepImage.image==nil || _txtStepDescription.text==nil|| [_txtStepDescription.text isEqual:@""] ) {
         return false;
     }
     else{

@@ -70,6 +70,10 @@
     [arrMutIngredient addObject:dictMutIngredient];
         dictMutIngredient = [NSMutableDictionary new];
     [_tableIngredient reloadData];
+    
+
+        _txtFQuantity.text=@"";
+        _txtFIngredientName.text=@"";
         
     }
     

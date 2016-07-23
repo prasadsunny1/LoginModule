@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "AddIngredientViewController.h"
 
-@interface UploadYourRecipeViewController : UIViewController  
+@interface UploadYourRecipeViewController : UIViewController 
+
+
 @property (weak, nonatomic) IBOutlet UIImageView *imgCoverImage;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnAddCoverImage;
