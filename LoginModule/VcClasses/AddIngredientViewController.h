@@ -15,14 +15,15 @@
 
 @end
 
-@interface AddIngredientViewController : UIViewController
+@interface AddIngredientViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
-
+@property(nonatomic,strong) void (^_completionHandler)(NSMutableArray *someParameter);
 @property (strong,nonatomic)  id  <protocolIngrident> delegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFIngredientName;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtFQuantity;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnAdd;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableIngredient;
