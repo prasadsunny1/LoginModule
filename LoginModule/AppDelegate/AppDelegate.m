@@ -8,14 +8,22 @@
 
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "Reachability.h"
 
 
 @interface AppDelegate ()
+{
+    Reachability *aReachability;
+}
 
 @end
 
 @implementation AppDelegate
 
++(AppDelegate*)sharedInstance
+{
+    return (AppDelegate*)[[UIApplication sharedApplication]delegate];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -37,6 +45,17 @@
     
     // Override point for customization after application launch.
     return YES;
+}
+
+-(BOOL)isInternetAvailable{
+    if(aReachability){
+        NetworkStatus aState = [aReachability currentReachabilityStatus];
+        if(aState != NotReachable){
+            return YES;
+        }
+        return NO;
+    }
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

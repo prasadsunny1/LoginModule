@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-
+-(BOOL)isInternetAvailable;
++(AppDelegate*)sharedInstance;
 @end
 

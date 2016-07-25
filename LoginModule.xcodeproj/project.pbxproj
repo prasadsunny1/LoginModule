@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		641DF8FCE8CA3117708D2CCF /* libPods-LoginModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 907F14B06D3A5FD8E5356377 /* libPods-LoginModule.a */; };
+		A94F101B1D462E40006B7659 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A94F101A1D462E40006B7659 /* Reachability.m */; };
 		A96BBC5B1D2FE9BF00BF70EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A96BBC5A1D2FE9BF00BF70EC /* main.m */; };
 		A96BBC641D2FE9BF00BF70EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96BBC621D2FE9BF00BF70EC /* Main.storyboard */; };
 		A96BBC661D2FE9BF00BF70EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96BBC651D2FE9BF00BF70EC /* Assets.xcassets */; };
@@ -35,6 +36,8 @@
 		085A023866E3591240CE3744 /* Pods-LoginModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginModule/Pods-LoginModule.debug.xcconfig"; sourceTree = "<group>"; };
 		100FE6170A5B770B1418B552 /* Pods-LoginModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoginModule/Pods-LoginModule.release.xcconfig"; sourceTree = "<group>"; };
 		907F14B06D3A5FD8E5356377 /* libPods-LoginModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LoginModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A94F10191D462E40006B7659 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		A94F101A1D462E40006B7659 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		A96BBC561D2FE9BF00BF70EC /* LoginModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96BBC5A1D2FE9BF00BF70EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A96BBC631D2FE9BF00BF70EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 		A96D64E91D3E29FE00254E18 /* VcClasses */ = {
 			isa = PBXGroup;
 			children = (
+				A94F10191D462E40006B7659 /* Reachability.h */,
+				A94F101A1D462E40006B7659 /* Reachability.m */,
 				A96D64EA1D3E2A3800254E18 /* ViewController.h */,
 				A96D64EB1D3E2A3800254E18 /* ViewController.m */,
 				A9AFB88F1D3F7E8600B49706 /* SignUpViewController.h */,
@@ -345,6 +350,7 @@
 				A96BBC5B1D2FE9BF00BF70EC /* main.m in Sources */,
 				A9AB01751D42027D00D3BFE7 /* AddVideoViewController.m in Sources */,
 				A9AFB8911D3F7E8600B49706 /* SignUpViewController.m in Sources */,
+				A94F101B1D462E40006B7659 /* Reachability.m in Sources */,
 				A9AB016F1D42021E00D3BFE7 /* AddStepsViewController.m in Sources */,
 				A96D64E41D3E29B700254E18 /* AppDelegate.m in Sources */,
 				A9AB01691D42018000D3BFE7 /* UploadYourRecipeViewController.m in Sources */,
