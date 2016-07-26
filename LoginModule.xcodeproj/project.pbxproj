@@ -16,6 +16,13 @@
 		A96D64E41D3E29B700254E18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A96D64E21D3E29B700254E18 /* AppDelegate.m */; };
 		A96D64EC1D3E2A3800254E18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A96D64EB1D3E2A3800254E18 /* ViewController.m */; };
 		A96D64EF1D3E2A5600254E18 /* login background.png in Resources */ = {isa = PBXBuildFile; fileRef = A96D64EE1D3E2A5600254E18 /* login background.png */; };
+		A973E9141D4741A4009BE06E /* loginbackground.png.png in Resources */ = {isa = PBXBuildFile; fileRef = A973E9131D4741A4009BE06E /* loginbackground.png.png */; };
+		A973E9161D4745F8009BE06E /* ForgotPassword_background.png in Resources */ = {isa = PBXBuildFile; fileRef = A973E9151D4745F8009BE06E /* ForgotPassword_background.png */; };
+		A973E9191D474A4C009BE06E /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A973E9181D474A4C009BE06E /* ForgotPasswordViewController.m */; };
+		A973E9231D476D8E009BE06E /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A973E91C1D476D8E009BE06E /* TPKeyboardAvoidingCollectionView.m */; };
+		A973E9241D476D8E009BE06E /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A973E91E1D476D8E009BE06E /* TPKeyboardAvoidingScrollView.m */; };
+		A973E9251D476D8E009BE06E /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A973E9201D476D8E009BE06E /* TPKeyboardAvoidingTableView.m */; };
+		A973E9261D476D8E009BE06E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = A973E9221D476D8E009BE06E /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		A9AB01691D42018000D3BFE7 /* UploadYourRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AB01681D42018000D3BFE7 /* UploadYourRecipeViewController.m */; };
 		A9AB016C1D4201F200D3BFE7 /* AddIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AB016B1D4201F200D3BFE7 /* AddIngredientViewController.m */; };
 		A9AB016F1D42021E00D3BFE7 /* AddStepsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AB016E1D42021E00D3BFE7 /* AddStepsViewController.m */; };
@@ -49,6 +56,18 @@
 		A96D64EA1D3E2A3800254E18 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A96D64EB1D3E2A3800254E18 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A96D64EE1D3E2A5600254E18 /* login background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login background.png"; sourceTree = "<group>"; };
+		A973E9131D4741A4009BE06E /* loginbackground.png.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbackground.png.png; sourceTree = "<group>"; };
+		A973E9151D4745F8009BE06E /* ForgotPassword_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ForgotPassword_background.png; sourceTree = "<group>"; };
+		A973E9171D474A4C009BE06E /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		A973E9181D474A4C009BE06E /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
+		A973E91B1D476D8E009BE06E /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		A973E91C1D476D8E009BE06E /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		A973E91D1D476D8E009BE06E /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		A973E91E1D476D8E009BE06E /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		A973E91F1D476D8E009BE06E /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		A973E9201D476D8E009BE06E /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		A973E9211D476D8E009BE06E /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		A973E9221D476D8E009BE06E /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		A9AB01671D42018000D3BFE7 /* UploadYourRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadYourRecipeViewController.h; sourceTree = "<group>"; };
 		A9AB01681D42018000D3BFE7 /* UploadYourRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadYourRecipeViewController.m; sourceTree = "<group>"; };
 		A9AB016A1D4201F200D3BFE7 /* AddIngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddIngredientViewController.h; sourceTree = "<group>"; };
@@ -127,6 +146,8 @@
 			children = (
 				A96BBC621D2FE9BF00BF70EC /* Main.storyboard */,
 				A96BBC651D2FE9BF00BF70EC /* Assets.xcassets */,
+				A973E9151D4745F8009BE06E /* ForgotPassword_background.png */,
+				A973E9131D4741A4009BE06E /* loginbackground.png.png */,
 				A96BBC671D2FE9BF00BF70EC /* LaunchScreen.storyboard */,
 				A96BBC6A1D2FE9BF00BF70EC /* Info.plist */,
 				A9AFB88D1D3F69D200B49706 /* GoogleService-Info.plist */,
@@ -156,6 +177,7 @@
 		A96D64E91D3E29FE00254E18 /* VcClasses */ = {
 			isa = PBXGroup;
 			children = (
+				A973E91A1D476D8E009BE06E /* TPKeyboardAvoiding */,
 				A94F10191D462E40006B7659 /* Reachability.h */,
 				A94F101A1D462E40006B7659 /* Reachability.m */,
 				A96D64EA1D3E2A3800254E18 /* ViewController.h */,
@@ -172,6 +194,8 @@
 				A9AB01711D42025400D3BFE7 /* PreviewStepsViewController.m */,
 				A9AB01731D42027D00D3BFE7 /* AddVideoViewController.h */,
 				A9AB01741D42027D00D3BFE7 /* AddVideoViewController.m */,
+				A973E9171D474A4C009BE06E /* ForgotPasswordViewController.h */,
+				A973E9181D474A4C009BE06E /* ForgotPasswordViewController.m */,
 			);
 			name = VcClasses;
 			path = LoginModule/VcClasses;
@@ -185,6 +209,21 @@
 			);
 			name = Resource;
 			path = LoginModule/Resource;
+			sourceTree = "<group>";
+		};
+		A973E91A1D476D8E009BE06E /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				A973E91B1D476D8E009BE06E /* TPKeyboardAvoidingCollectionView.h */,
+				A973E91C1D476D8E009BE06E /* TPKeyboardAvoidingCollectionView.m */,
+				A973E91D1D476D8E009BE06E /* TPKeyboardAvoidingScrollView.h */,
+				A973E91E1D476D8E009BE06E /* TPKeyboardAvoidingScrollView.m */,
+				A973E91F1D476D8E009BE06E /* TPKeyboardAvoidingTableView.h */,
+				A973E9201D476D8E009BE06E /* TPKeyboardAvoidingTableView.m */,
+				A973E9211D476D8E009BE06E /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				A973E9221D476D8E009BE06E /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		A9F8D2AF1D41110600C0074E /* icons */ = {
@@ -281,8 +320,10 @@
 				A9F8D2B81D41110600C0074E /* Facebook.png in Resources */,
 				A96BBC691D2FE9BF00BF70EC /* LaunchScreen.storyboard in Resources */,
 				A9F8D2BA1D41110600C0074E /* Facebook@3x.png in Resources */,
+				A973E9161D4745F8009BE06E /* ForgotPassword_background.png in Resources */,
 				A9F8D2BB1D41110600C0074E /* Google+.png in Resources */,
 				A9F8D2BC1D41110600C0074E /* Google+@2x.png in Resources */,
+				A973E9141D4741A4009BE06E /* loginbackground.png.png in Resources */,
 				A9AFB88E1D3F69D200B49706 /* GoogleService-Info.plist in Resources */,
 				A9F8D2BD1D41110600C0074E /* Google+@3x.png in Resources */,
 				A96BBC661D2FE9BF00BF70EC /* Assets.xcassets in Resources */,
@@ -346,15 +387,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A973E9241D476D8E009BE06E /* TPKeyboardAvoidingScrollView.m in Sources */,
+				A973E9191D474A4C009BE06E /* ForgotPasswordViewController.m in Sources */,
 				A96D64EC1D3E2A3800254E18 /* ViewController.m in Sources */,
 				A96BBC5B1D2FE9BF00BF70EC /* main.m in Sources */,
+				A973E9261D476D8E009BE06E /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				A9AB01751D42027D00D3BFE7 /* AddVideoViewController.m in Sources */,
 				A9AFB8911D3F7E8600B49706 /* SignUpViewController.m in Sources */,
 				A94F101B1D462E40006B7659 /* Reachability.m in Sources */,
 				A9AB016F1D42021E00D3BFE7 /* AddStepsViewController.m in Sources */,
 				A96D64E41D3E29B700254E18 /* AppDelegate.m in Sources */,
+				A973E9251D476D8E009BE06E /* TPKeyboardAvoidingTableView.m in Sources */,
 				A9AB01691D42018000D3BFE7 /* UploadYourRecipeViewController.m in Sources */,
 				A9AB016C1D4201F200D3BFE7 /* AddIngredientViewController.m in Sources */,
+				A973E9231D476D8E009BE06E /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				A9AB01721D42025400D3BFE7 /* PreviewStepsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

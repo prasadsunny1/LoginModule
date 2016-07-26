@@ -16,5 +16,6 @@
 
 -(BOOL)isInternetAvailable;
 +(AppDelegate*)sharedInstance;
+-(void)showAlertInController:(UIViewController*)controller WithMessage:(NSString*)strMessage;
 @end
 

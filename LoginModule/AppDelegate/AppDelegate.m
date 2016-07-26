@@ -41,10 +41,21 @@
     
     [GIDSignIn sharedInstance].delegate = self;
 
-    
+  
+   //    [[UINavigationBar appearance] setTranslucent:YES];
+//    [[[UINavigationController appearance] ]
     
     // Override point for customization after application launch.
     return YES;
+}
+
+-(void)showAlertInController:(UIViewController*)controller WithMessage:(NSString*)strMessage
+{
+    //alertView initializing
+   UIAlertController  *alert  =[UIAlertController alertControllerWithTitle:@"Recipe" message:strMessage preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction =[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:okAction];
+    [controller presentViewController:alert animated:YES completion:nil];
 }
 
 -(BOOL)isInternetAvailable{

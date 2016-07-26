@@ -21,6 +21,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnGoogleSignUp;
 
 @property (weak, nonatomic) IBOutlet UIView *viewFacebookSignUp;
+@property (weak, nonatomic) IBOutlet UIButton *btnForgotPassword;
+@property (weak, nonatomic) IBOutlet UIView *viewLoginField;
 
 @end
 

@@ -9,26 +9,17 @@
 #import "SignUpViewController.h"
 #import "Reachability.h"
 #import "AppDelegate.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+
 @interface SignUpViewController ()
-{
-    UIAlertController *alert;
-    BOOL errorFlag;
-    NSString *errorString;
-}
+
 @end
 
 @implementation SignUpViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    errorFlag=false;
-    errorString=[NSString new];
-    
-    //alertView initializing
-   alert  =[UIAlertController alertControllerWithTitle:@"OOPS" message:@"messege" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction =[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:okAction];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,75 +27,43 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-
-#pragma mark -UIDesign
-
-
-
-
-
 #pragma mark -Register Button Action
 
 - (IBAction)btnRegisterAction:(UIButton *)sender {
-        
-        if([[AppDelegate sharedInstance] isInternetAvailable])
-        {
-            if ([self isNameValid:_txtFName.text]) {
-                errorFlag=true;
-                [errorString stringByAppendingString:@"Name Invalid \n"];
-            }
-            if ([self isValidEmail:_txtFEmail.text]) {
-                errorFlag=true;
-                [errorString stringByAppendingString:@"Email Invalid \n"];
-            }
-            if ([self isValidPassword:_txtFPassword.text]) {
-                errorFlag=true;
-                [errorString stringByAppendingString:@"Password Invalid \n"];
-            }
-            if (_txtFPassword.text != _txtFConfirmPassword.text) {
-                errorFlag=true;
-                [errorString stringByAppendingString:@"Password Does not Match \n"];
-            }
-            if (errorFlag) {
-                [alert setTitle:@"Please Correct"];
-                [alert setMessage:errorString];
-                [self presentViewController:alert animated:true completion:nil];
-            }
-            else{
-                [self addUser];
-            }
-        }
-        else{
-            errorString=@"Internet Not Available";
-            [alert setTitle:@"Internet Not Availible"];
-            [alert setMessage:@"Please Check Your Internet Connection"];
-            [self presentViewController:alert animated:true completion:nil];
-            
-        }
     
-    
-    
-    
-   
-    
-    
+    if ([_txtFName.text isEqualToString:@""] || _txtFName.text.length == 0)
+    {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Enter name"];
+    }
+    else if ([_txtFEmail.text isEqualToString:@""] || _txtFEmail.text.length == 0)
+    {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Enter email"];
+    }
+    else if (![self isValidEmail:_txtFEmail.text] )
+    {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Enter valid email"];
+    }
+    else if ([_txtFPassword.text isEqualToString:@""] || _txtFPassword.text.length == 0)
+    {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Enter password"];
+    }
+    else if (![self isValidPassword:_txtFPassword.text] )
+    {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Enter valid password"];
+    }
+    else if (![_txtFPassword.text isEqualToString:_txtFConfirmPassword.text])
+    {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Password not Match"];
+    }
+    else
+    {
+        [self addUser];
+    }
 }
 
-
-
--(void)addUser{
-    
+-(void)addUser
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSDictionary *headers = @{ @"x-apikey": @"18961ebc916a47e54dae5dcb273d407508bbe",
                                @"content-type": @"application/json",
                                @"cache-control": @"no-cache",
@@ -125,9 +84,18 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    
+                                                    dispatch_async(dispatch_get_main_queue(), ^{
+                                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                        
+                                                        [self.navigationController popViewControllerAnimated:YES];
+                                                    });
+                                                                   
+                                                    
                                                     if (error) {
                                                         NSLog(@"%@", error);
                                                     } else {
+                                                       
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
                                                     }
@@ -140,74 +108,27 @@
 
 -(BOOL) isValidEmail:(NSString *)checkString
 {
-    BOOL stricterFilter = NO;
-    NSString *stricterFilterString = @"^[A-Z0-9a-z\\._%+-]+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2,4}$";
-    NSString *laxString = @"^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$";
-    NSString *emailRegex = stricterFilter ? stricterFilterString : laxString;
-    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-    return [emailTest evaluateWithObject:checkString];
-}
-
-//http://stackoverflow.com/questions/15132276/password-validation-in-uitextfield-in-ios
--(BOOL)isValidPassword:(NSString *)password{
+    NSString *emailRegEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegEx];
+    //Valid email address
     
-    BOOL lowerCaseLetter = '\0',upperCaseLetter = '\0',digit = '\0',specialCharacter = 0;
-    if([password length] >= 10)
+    if ([emailTest evaluateWithObject:checkString] == YES)
     {
-        for (int i = 0; i < [password length]; i++)
-        {
-            unichar c = [password characterAtIndex:i];
-            if(!lowerCaseLetter)
-            {
-                lowerCaseLetter = [[NSCharacterSet lowercaseLetterCharacterSet] characterIsMember:c];
-            }
-            if(!upperCaseLetter)
-            {
-                upperCaseLetter = [[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:c];
-            }
-            if(!digit)
-            {
-                digit = [[NSCharacterSet decimalDigitCharacterSet] characterIsMember:c];
-            }
-            if(!specialCharacter)
-            {
-                specialCharacter = [[NSCharacterSet symbolCharacterSet] characterIsMember:c];
-            }
-        }
-        
-        if(specialCharacter && digit && lowerCaseLetter && upperCaseLetter)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-        
-    }
-    else
-    {
-        return false;
-    }
-}
-
-
-
--(BOOL)isNameValid :(NSString *)name{
-    
-    
-    NSString *Regex = @"[a-zA-Z][a-zA-Z ]*";
-    NSPredicate *TestResult = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",Regex];
-    
-    if ([TestResult evaluateWithObject:name] == true)
-    {
-        
         return true;
     }
     else
     {
+        NSLog(@"email not in proper format");
         return false;
-       
+    }
+}
+
+-(BOOL)isValidPassword : (NSString *)password{
+    if (password.length<8 || password.length>15) {
+        return false;
+    }
+    else{
+        return true;
     }
 }
 

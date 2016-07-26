@@ -6,7 +6,9 @@ target 'LoginModule' do
   # use_frameworks!
 
   # Pods for LoginModule
-pod 'Google/SignIn'
+ pod 'Google/SignIn'
  pod 'FBSDKCoreKit'
  pod 'FBSDKLoginKit'
+ pod 'MBProgressHUD', '~> 1.0.0'
 end
+    
