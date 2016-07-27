@@ -33,6 +33,7 @@
  green:7.0f/255.0f blue:18.0f/255.0f alpha:1];
     self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:159.0f/255.0f
                                                                              green:7.0f/255.0f blue:18.0f/255.0f alpha:1];
+ 
     //
     loginData =[NSMutableDictionary new];
     
@@ -90,7 +91,7 @@
     
 }
 
-#pragma mark -FBLogin Button Click
+#pragma mark -Social Login Button Click
 
 
 - (IBAction)btnFbloginAction:(UIButton *)sender {

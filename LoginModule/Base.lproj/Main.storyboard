@@ -150,7 +150,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62352941176470589" green="0.027450980392156862" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="9th-qR-GgT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KYD-mK-Ef5"/>
                             <constraint firstItem="9th-qR-GgT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QWZ-dR-Aid"/>
@@ -159,6 +159,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="wlj-Td-x2G"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnForgotPassword" destination="FmN-37-S8n" id="4fZ-HZ-fSD"/>
                         <outlet property="btnGoogleSignUp" destination="9cV-ka-rlz" id="Y9P-j2-rPe"/>
@@ -275,14 +276,15 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.6241162737" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.62352941176470589" green="0.027450980392156862" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="Ymb-Gv-6Wl"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnRegister" destination="F9a-la-l40" id="OUH-ut-tov"/>
                         <outlet property="txtFConfirmPassword" destination="0iV-lX-Ig2" id="F5M-88-Y4X"/>
@@ -340,9 +342,10 @@
                                 <color key="backgroundColor" red="0.6241162737" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="zDc-Gi-3fK"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnGetPassWord" destination="Vr6-wL-Bh8" id="n30-wj-ogV"/>
                         <outlet property="txtFEmail" destination="U15-Hm-fFe" id="oVH-rI-pPL"/>
@@ -357,6 +360,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qJR-rj-iaA" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rds-It-de3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -516,9 +520,10 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Upload Your Recipe" id="w7k-L9-qKd"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnAddCoverImage" destination="h4o-ZZ-5Tj" id="Tn7-rS-xbv"/>
                         <outlet property="btnAddIngredient" destination="i9R-mh-aVf" id="mLP-7F-Uu2"/>
@@ -587,7 +592,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="180"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Steps" id="FHj-Jg-Vw0">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="QYV-q3-DyO">
@@ -596,6 +601,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnAddImage" destination="0rv-xW-ZBe" id="Grs-l1-Gex"/>
                         <outlet property="btnAddStep" destination="Is1-3w-88Z" id="tbD-H8-FEB"/>
@@ -661,6 +667,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tablePreview" destination="Ru2-zq-iI8" id="oMA-tu-fEk"/>
                     </connections>
@@ -733,7 +740,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Ingredients" id="Upo-fR-0pb">
@@ -743,6 +750,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnAdd" destination="umH-se-rZm" id="SRI-v4-qVT"/>
                         <outlet property="tableIngredient" destination="KwL-h8-2f1" id="HAR-Js-8jM"/>
@@ -777,7 +785,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Video" id="18m-f3-p1B">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="ist-kn-UdH">
@@ -786,6 +794,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="btnSelectVideo" destination="GUg-3l-Z4k" id="Y9u-E1-7e5"/>
                         <outlet property="imgAddVideoImage" destination="6dE-eN-Me7" id="bRr-Pz-0Ns"/>
