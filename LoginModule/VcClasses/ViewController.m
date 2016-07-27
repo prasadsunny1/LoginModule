@@ -165,7 +165,7 @@
                                                         
                                                         dispatch_async(dispatch_get_main_queue(), ^{
                                                             
-                                                            if([aDict[@"email"] isEqualToString:emailFromFacebook ]){
+                                                            if([aDict[@"email"] isEqualToString:@"prasadsunny1@gmail.com" ]){
                                                                 
                                                                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                                                                 
