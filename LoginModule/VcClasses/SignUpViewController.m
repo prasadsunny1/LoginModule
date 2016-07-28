@@ -57,20 +57,32 @@
     }
     else
     {
-        [self addUser];
+        [self addUser:nil];
     }
 }
 
--(void)addUser
+-(void)addUser:(nullable NSDictionary *)googleDict
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSDictionary *headers = @{ @"x-apikey": @"18961ebc916a47e54dae5dcb273d407508bbe",
                                @"content-type": @"application/json",
                                @"cache-control": @"no-cache",
                                @"postman-token": @"57c41260-46db-41ca-9399-cbccae2e2e59" };
-    NSDictionary *parameters = @{ @"name": _txtFName.text,
-                                  @"email": _txtFEmail.text,
-                                  @"password":_txtFPassword.text};
+    
+    
+    NSMutableDictionary *parameters=[NSMutableDictionary new];
+    if (googleDict!=nil) {
+        parameters = @{ @"name":googleDict[@"FullName"],
+                                      @"email": googleDict[@"email"],
+                                      @"password":@"admin",
+                        @"google_id":googleDict[@"idToken"]}.mutableCopy;
+    }else{
+       parameters = @{ @"name": _txtFName.text,
+                                      @"email": _txtFEmail.text,
+                                      @"password":_txtFPassword.text}.mutableCopy;
+
+    }
+   
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
     
@@ -86,9 +98,17 @@
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                     
                                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                        if (googleDict!=nil) {
+                                                            NSLog(@"Login Success for google user");
                                                         
-                                                        [self.navigationController popViewControllerAnimated:YES];
+                                                        }
+                                                        else{
+                                                            
+                                                            [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                            
+                                                            [self.navigationController popViewControllerAnimated:YES];
+                                                        }
+
                                                     });
                                                                    
                                                     

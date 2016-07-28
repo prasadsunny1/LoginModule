@@ -10,11 +10,16 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "AppDelegate.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "SignUpViewController.h"
+#import <Google/SignIn.h>
 
-@interface ViewController ()
+
+@interface ViewController ()<GIDSignInDelegate>
 {
     NSMutableDictionary *loginData;
     NSString *emailFromFacebook;
+    NSString *emailFromGoogle;
+    
 }
 
 @end
@@ -24,6 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self prepareView];
+    
+    
+    
+    
     //
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
@@ -63,29 +72,11 @@
 
 -(void)prepareView{
     
-    
-  
-//    CALayer *border = [CALayer layer];
-//    CGFloat borderWidth = 1;
-//    
-//    _txtFEmail.borderStyle = UITextBorderStyleNone;
-//    border.borderColor = [UIColor whiteColor].CGColor;
-//    border.frame = CGRectMake(0, _txtFEmail.frame.size.height - borderWidth, _txtFEmail.frame.size.width, _txtFEmail.frame.size.height);
-//    border.borderWidth = borderWidth;
-//    [_txtFEmail.layer addSublayer:border];
-//    _txtFEmail.layer.masksToBounds = YES;
-//    
-//    
-//    CALayer *passwordborder =[CALayer layer];
-//    _txtFPassword.borderStyle = UITextBorderStyleNone;
-//    passwordborder.borderColor = [UIColor whiteColor].CGColor;
-//    passwordborder.frame = CGRectMake(0, _txtFPassword.frame.size.height - borderWidth, _txtFPassword.frame.size.width, _txtFPassword.frame.size.height);
-//    passwordborder.borderWidth = borderWidth;
-//    [_txtFPassword.layer addSublayer:passwordborder];
-//    _txtFPassword.layer.masksToBounds = YES;
-    
     _viewLoginField.layer.cornerRadius=10.0;
     _viewLoginField.layer.shadowColor=[UIColor blackColor].CGColor;
+    
+    
+    
     
 
     
@@ -172,8 +163,10 @@
                                                                 
                                                                 [self performSegueWithIdentifier:@"LoginSuccessSegue" sender:nil];
                                                                 
-                                                            }else if(YES){
+                                                            }else {
                                                                 
+                                                                [MBProgressHUD hideHUDForView:self.view animated:YES];
+
                                                             }
                                                             
                                                         });
@@ -182,6 +175,10 @@
                                                         }else{
                                                             
                                                             NSLog(@" Wrong Username or Password");
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+
+                                                            [MBProgressHUD hideHUDForView:self.view animated:true];
+                                                            });
                                                         }
                                                       
                                                     }
@@ -264,6 +261,87 @@
 }
 
 
+//google Sign In Web Service
+
+
+
+
+-(void)callGoogleLoginWebService : (nullable NSDictionary *) googleDict{
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    NSDictionary *headers = @{ @"content-type": @"application/json",
+                               @"x-apikey": @"18961ebc916a47e54dae5dcb273d407508bbe",@"cache-control": @"no-cache",
+                               @"postman-token": @"75f6a352-914f-954f-19f7-b29dddaeade9" };
+    
+    
+    //    NSString *email=@"email";
+    //    NSString *password=@"password";
+    
+    emailFromGoogle =googleDict[@"email"];
+    NSString *url =[NSString stringWithFormat:@"https://recipeapp-6bbd.restdb.io/rest/profile?q={\"email\":\"%@\"}",emailFromGoogle];
+    
+    NSLog(@"\n\n URL :    %@",url);
+    NSLog(@"utf %@",[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]);
+    
+    NSURL *myurl = [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:myurl
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    
+    
+    
+    NSLog(@"\n\n MYURL :   %@",myurl);
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSLog(@"%@",data);
+                                                        NSArray *aArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                                                        NSLog(@" Dict : %@",aArray);
+                                                        
+                                                        if(aArray.count){
+                                                            
+                                                            NSDictionary *aDict = aArray[0];
+                                                            
+                                                            
+                                                            
+                                                            dispatch_async(dispatch_get_main_queue(), ^{
+                                                                
+                                                                
+                                                                if([aDict[@"email"] isEqualToString:emailFromGoogle ]){
+                                                                    
+                                                                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                                    
+                                                                    
+                                                                    NSLog(@"successs");
+                                                                }
+                                                             
+                                                                
+                                                            });
+                                                            NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                            NSLog(@"%@", httpResponse);
+                                                        }else{
+                                                            
+                                                            NSLog(@" Wrong Username or Password");
+                                                            NSLog(@"google user not found in our db ,Registering him now");
+                                                            SignUpViewController *obj=[SignUpViewController new];
+                                                            [obj addUser:googleDict];
+                                                            
+
+                                                        }
+                                                        
+                                                    }
+                                                }];
+    [dataTask resume];
+}
+
+
 
 
 #pragma mark button Action
@@ -320,6 +398,36 @@
     return [emailTest evaluateWithObject:checkString];
 }
 
+
+
+
+
+- (void)signIn:(GIDSignIn *)signIn
+didSignInForUser:(GIDGoogleUser *)user
+     withError:(NSError *)error {
+    // Perform any operations on signed in user here.
+    NSString *userId = user.userID;                  // For client-side use only!
+    NSString *idToken = user.authentication.idToken; // Safe to send to the server
+    NSString *fullName = user.profile.name;
+    NSString *givenName = user.profile.givenName;
+    NSString *familyName = user.profile.familyName;
+    NSString *email = user.profile.email;
+    
+    
+    NSDictionary *aDict = @{ @"userId" : userId ,
+                             @"idToken" : idToken,
+                             @"FullName" : fullName,
+                             @"givenName" : givenName,
+                             @"familyName" :familyName,
+                             @"email" :email
+                             };
+    
+    
+   _googleSignInData =aDict;
+    [self callGoogleLoginWebService:_googleSignInData];
+    
+    // ...
+}
 
 
 @end

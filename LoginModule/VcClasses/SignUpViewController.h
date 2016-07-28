@@ -10,6 +10,8 @@
 
 @interface SignUpViewController : UIViewController
 
+-(void)addUser:(nullable NSDictionary *)googleDict;
+
 @property (weak, nonatomic) IBOutlet UITextField *txtFName;
 @property (weak, nonatomic) IBOutlet UITextField *txtFEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtFPassword;

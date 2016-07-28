@@ -24,5 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnForgotPassword;
 @property (weak, nonatomic) IBOutlet UIView *viewLoginField;
 
+@property (strong,nonatomic) NSDictionary *googleSignInData;
+
+-(void)callGoogleLoginWebService : (nullable NSDictionary *) googleDict;
 @end
 

@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "Reachability.h"
-
+#import "ViewController.h"
 
 @interface AppDelegate ()
 {
@@ -112,6 +112,21 @@ didSignInForUser:(GIDGoogleUser *)user
     NSString *givenName = user.profile.givenName;
     NSString *familyName = user.profile.familyName;
     NSString *email = user.profile.email;
+    
+    
+    NSDictionary *aDict = @{ @"userId" : userId ,
+                             @"idToken" : idToken,
+                             @"FullName" : fullName,
+                             @"givenName" : givenName,
+                             @"familyName" :familyName,
+                             @"email" :email
+                             };
+    
+    ViewController *objVC =[ViewController new];
+   
+    
+    [objVC callGoogleLoginWebService:aDict];
+    
     // ...
 }
 
