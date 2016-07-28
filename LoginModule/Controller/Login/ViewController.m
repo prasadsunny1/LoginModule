@@ -57,8 +57,6 @@
     
     // Uncomment to automatically sign in the user.
     //[[GIDSignIn sharedInstance] signInSilently];
-
-    
 }
 
 
@@ -74,34 +72,27 @@
     
     _viewLoginField.layer.cornerRadius=10.0;
     _viewLoginField.layer.shadowColor=[UIColor blackColor].CGColor;
-    
-    
-    
-    
-
-    
 }
 
 #pragma mark -Social Login Button Click
 
-
 - (IBAction)btnFbloginAction:(UIButton *)sender {
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login
-     logInWithReadPermissions: @[@"public_profile"]
-     fromViewController:self
-     handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-         if (error) {
-             NSLog(@"Process error");
-             
-         } else if (result.isCancelled) {
-             NSLog(@"Cancelled");
-         } else {
-             NSLog(@"%@",result);
-             NSLog(@"Logged in");
-         }
-     }];
+    [login  logInWithReadPermissions: @[@"public_profile"]
+                  fromViewController:self
+                             handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+                                 if (error) {
+                                     NSLog(@"Process error");
+                                     
+                                 } else if (result.isCancelled) {
+                                     NSLog(@"Cancelled");
+                                 } else {
+                                     NSLog(@"%@",result);
+                                     NSLog(@"Logged in");
+                                 }
+                             }];
 }
+
 - (IBAction)btnGoogleLoginAction:(UIButton *)sender {
     [[GIDSignIn sharedInstance] signIn];
 

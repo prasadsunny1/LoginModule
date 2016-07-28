@@ -142,21 +142,17 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 
 #pragma mark -facebook Open Url
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                          openURL:url
-                                                sourceApplication:sourceApplication
-                                                       annotation:annotation];
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                  openURL:url
+                                                        sourceApplication:sourceApplication
+                                                               annotation:annotation
+                    ];
+    // Add any custom logic here.
+    return handled;
 }
-
-
-
-
-
-
 
 #pragma mark -Google Open Url
 
@@ -165,9 +161,24 @@ didDisconnectWithUser:(GIDGoogleUser *)user
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary *)options {
+    
+    
+    if([[FBSDKApplicationDelegate sharedInstance] application:app
+                                                             openURL:url
+                                                   sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                          annotation:options[UIApplicationOpenURLOptionsAnnotationKey]])
+    {
+        return  [[FBSDKApplicationDelegate sharedInstance] application:app
+                                                                     openURL:url
+                                                           sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                                  annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+    }
+    else
+    {
     return [[GIDSignIn sharedInstance] handleURL:url
                                sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
                                       annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+    }
 }
 
 @end
