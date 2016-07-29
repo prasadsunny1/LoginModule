@@ -323,10 +323,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="TPKeyboardAvoidingScrollView" translatesAutoresizingMaskIntoConstraints="NO" id="ZMd-AL-DE8" customClass="TPKeyboardAvoidingScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="TPKeyboardAvoidingScrollView" translatesAutoresizingMaskIntoConstraints="NO" id="ZMd-AL-DE8" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xb0-d0-1Ii">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xb0-d0-1Ii">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Regidtered Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U15-Hm-fFe">
@@ -357,11 +357,27 @@
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.6241162737" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="504" id="VBA-Fw-xOE"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Xb0-d0-1Ii" firstAttribute="leading" secondItem="ZMd-AL-DE8" secondAttribute="leading" id="2yQ-5m-6cY"/>
+                                    <constraint firstItem="Xb0-d0-1Ii" firstAttribute="centerX" secondItem="ZMd-AL-DE8" secondAttribute="centerX" id="5p2-F9-lf2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xb0-d0-1Ii" secondAttribute="trailing" id="KLs-U4-Gbq"/>
+                                    <constraint firstItem="Xb0-d0-1Ii" firstAttribute="top" secondItem="ZMd-AL-DE8" secondAttribute="top" constant="64" id="YyG-D3-Xto"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xb0-d0-1Ii" secondAttribute="bottom" constant="-64" id="rnU-JC-0p1"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZMd-AL-DE8" firstAttribute="bottom" secondItem="YCU-gQ-NeO" secondAttribute="top" id="jcf-An-DDZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ZMd-AL-DE8" secondAttribute="trailing" id="wSU-yw-roF"/>
+                            <constraint firstItem="ZMd-AL-DE8" firstAttribute="top" secondItem="wGe-Cg-G4L" secondAttribute="bottom" id="xKm-uv-aF2"/>
+                            <constraint firstItem="ZMd-AL-DE8" firstAttribute="leading" secondItem="vGW-0E-MTG" secondAttribute="leading" id="xNe-fn-idG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="zDc-Gi-3fK"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
