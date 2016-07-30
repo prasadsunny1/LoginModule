@@ -10,5 +10,6 @@ target 'LoginModule' do
  pod 'FBSDKCoreKit'
  pod 'FBSDKLoginKit'
  pod 'MBProgressHUD', '~> 1.0.0'
+ pod 'BEMCheckBox'
 end
     

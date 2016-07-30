@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BEMCheckBox.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7ABCA72443B4DF31EE190FA9812866DB</key>
+		<key>7E61C9A8C176278C6C99C2C59E9C152E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E61C9A8C176278C6C99C2C59E9C152E</key>
+		<key>8C80F913EE213FA1EE3801FF8CEF0DD4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CCE4DD450F9E70418527064E6035C6DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
